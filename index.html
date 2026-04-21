@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Kitchen</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Bubblegum+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Sirin+Stencil&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* Custom animation */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide-up {
+      animation: slideUp 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    min-width: 100%;
+    animation: marquee 15s linear infinite;
+  }
+  *{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: 40px;
+  font-weight: 400;
+  font-style: normal;
+}
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!--  Top Bar -->
+  <!-- Rolling Top Bar -->
+<div class="bg-gray-200 overflow-hidden whitespace-nowrap">
+  <div class="animate-marquee inline-block py-2 text-gray-700 text-sm">
+    <span class="mx-8">
+      Subscribe to our newsletter - mykitchen@gmail.com
+    </span>
+    <span class="mx-8">
+      Fresh recipes every week 🍲 | Healthy & tasty ideas!
+    </span>
+    <span class="mx-8">
+      Follow us for more delicious updates ❤️
+    </span>
+  </div>
+</div>
+
+  <!--  Header -->
+  <header class="bg-white shadow-sm fade-in">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <div class="text-xl font-semibold border px-4 py-1 rounded-full text-red-500">
+       <img src="./Assets/images/logo.png">
+      </div>
+
+      <!-- Search -->
+      <div class="hidden md:flex items-center w-1/3 relative ">
+        <input type="text" placeholder="Search"
+          class="w-full border-b border-gray-400 outline-none px-2 py-1"/>
+        <button class="absolute right-0 bg-red-500 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="menu" class="hidden md:flex justify-center space-x-10 py-4 border-t border-b">
+      <a href="index.html" class="hover:text-red-500">HOME</a>
+      <a href="./recipes.html" class="hover:text-red-500">RECIPES</a>
+      <a href="./blog.html" class="hover:text-red-500">BLOG</a>
+      <a href="./aboutme.html" class="hover:text-red-500">ABOUT ME</a>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="hidden flex-col items-center space-y-4 py-4 border-t md:hidden">
+      <a href="./index.html" class="text-red-500 font-semibold">HOME</a>
+      <a href="./recipes.html">RECIPES</a>
+      <a href="./blog.html">BLOG</a>
+      <a href="./aboutme.html">ABOUT ME</a>
+    </div>
+  </header>
+
+  <!-- 🖼 Banner Section -->
+  <section class="relative mt-6 mx-4 md:mx-auto max-w-7xl">
+    
+    <img src="./Assets/images/hero image.png"
+      class="w-full h-[300px] md:h-[450px] object-cover rounded"/>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/30 rounded"></div>
+
+    <!-- Content -->
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+      
+      <h1 class="text-2xl md:text-4xl font-bold text-red-500 slide-up">
+        Sharing my love for food
+      </h1>
+
+      <p class="mt-4 max-w-xl text-sm md:text-lg slide-up">
+        I’m excited to share my passion for all things culinary.
+        Food is not just about nourishment: it’s an experience
+        that brings people together, evokes memories, and sparks creativity.
+      </p>
+
+      <button class="mt-6 bg-red-500 hover:bg-red-600 px-6 py-2 rounded text-white flex items-center gap-2 slide-up">
+        GET IN TOUCH <i class="fas fa-paper-plane"></i>
+      </button>
+
+    </div>
+  </section>
+  <!--  Carousel Section -->
+<section class="max-w-7xl mx-auto px-4 py-10">
+
+  <!-- Carousel Container -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+
+  <div class="relative overflow-hidden">
+
+    <!-- Slides Wrapper -->
+    <div id="carousel" class="flex transition-transform duration-700">
+
+      <!-- Slide 1 -->
+      <div class="min-w-full grid md:grid-cols-2 gap-8">
+        
+        <!-- Card -->
+        <div>
+            <a href="./corousel.html">
+          <img src="./Assets/images/dessert.png"
+            class="w-full h-80 object-cover rounded"/>
+          <p class="text-red-500 mt-4 text-sm">DESSERT</p>
+          <h2 class="text-xl font-medium">Chocolate Mousse</h2>
+          </a>
+        </div>
+
+        <div>
+            <a href="./corousel.html">
+          <img src="./Assets/images/bites.png"
+            class="w-full h-80 object-cover rounded"/>
+          <p class="text-red-500 mt-4 text-sm">PLATTER</p>
+          <h2 class="text-xl font-medium">Sea Food Platter</h2>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="min-w-full grid md:grid-cols-2 gap-8">
+        
+        <div>
+             <a href="./corousel.html">
+          <img src="./Assets/images/starter.png"
+            class="w-full h-80 object-cover rounded"/>
+          <p class="text-red-500 mt-4 text-sm">BITES</p>
+          <h2 class="text-xl font-medium">Stuffed Mini Peppers</h2>
+          </a>
+        </div>
+
+        <div>
+             <a href="./corousel.html">
+          <img src="./Assets/images/platter.png"
+            class="w-full h-80 object-cover rounded"/>
+          <p class="text-red-500 mt-4 text-sm">SIDE DISH</p>
+          <h2 class="text-xl font-medium">Garlic Mashed Potatoes</h2>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="min-w-full grid md:grid-cols-2 gap-8">
+        
+        <div>
+             <a href="./corousel.html">
+          <img src="./Assets/images/side dish.png"
+            class="w-full h-80 object-cover rounded"/>
+          <p class="text-red-500 mt-4 text-sm">STARTER</p>
+          <h2 class="text-xl font-medium">Caprese Salad Skewers</h2>
+           </a>
+        </div>
+
+        <div>
+             <a href="./corousel.html">
+          <img src="./Assets/images/mani course.png"
+            class="w-full h-80 object-cover rounded"/>
+          <p class="text-red-500 mt-4 text-sm">MAIN COURSE</p>
+          <h2 class="text-xl font-medium">Grilled Lemon Herb Chicken</h2>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+<!-- Controls -->
+<button id="prev"
+  class="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow w-8 h-8 rounded-full flex items-center justify-center">
+
+  <i class="fas fa-circle text-red-500 text-xs"></i>
+
+</button>
+
+<button id="next"
+  class="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow w-8 h-8 rounded-full flex items-center justify-center">
+
+  <i class="fas fa-circle text-red-500 text-xs"></i>
+
+</button>
+   
+  </div>
+
+</section>
+<!--straight to your inbox-->
+<section class="max-w-6xl mx-auto px-4 py-16">
+
+  <div class="border-2 border-red-500 p-10 relative bg-white">
+
+    <!-- Background faint icons (optional) -->
+    <div class="absolute inset-0 opacity-5 bg-[url('C:\Users\Admin\Desktop\restaurant\Assets\images\gettyimages-582296960-612x612.jpg')] bg-center bg-no-repeat"></div>
+
+    <div class="relative grid md:grid-cols-3 gap-8 items-center">
+
+      <!-- Left Text -->
+      <div>
+        <p class="text-red-500 text-sm mb-2">New recipes</p>
+        <h2 class="text-2xl md:text-3xl font-semibold text-red-600">
+          Straight to your inbox
+        </h2>
+      </div>
+
+      <!-- Name Input -->
+      <div>
+        <input 
+          type="text" 
+          placeholder="Enter your name"
+          class="w-full border-b-2 border-red-400 focus:outline-none focus:border-red-600 py-2 bg-transparent"
+        />
+      </div>
+
+      <!-- Email Input + Icon -->
+      <div class="flex items-center border-b-2 border-red-400 focus-within:border-red-600">
+        
+        <input 
+          type="email" 
+          placeholder="Enter your email address here"
+          class="w-full outline-none py-2 bg-transparent"
+        />
+
+        <button class="text-red-500 text-lg ml-2">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!--latest recipe-->
+<section class="max-w-7xl mx-auto px-4 py-12">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="text-2xl font-semibold">Latest Recipes</h2>
+
+    <a href="/recipes.html"
+      class="bg-red-500 text-white px-5 py-2 rounded-full flex items-center gap-2 hover:bg-red-600 transition">
+      View All →
+    </a>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- Card 1 -->
+    <a href="./corousel.html"
+      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+      <img src="./Assets/images/latest recipes 1.png"
+        class="w-full h-48 object-cover"/>
+
+      <div class="p-4 text-center">
+        <p class="text-gray-700 font-medium">
+          Chickpea and sprouts salad
+        </p>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="./latest recipe2.html"
+      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+      <img src="./Assets/images/latest recipes 2.png"
+        class="w-full h-48 object-cover"/>
+
+      <div class="p-4 text-center">
+        <p class="text-gray-700 font-medium">
+          High protein chocolate mousse
+        </p>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="./latestrecipe3.html"
+      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+      <img src="./Assets/images/latest recipes 3.png"
+        class="w-full h-48 object-cover"/>
+
+      <div class="p-4 text-center">
+        <p class="text-gray-700 font-medium">
+          Big mac lamb chops and veggies
+        </p>
+      </div>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="./latestrecipe4.html"
+      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+      <img src="./Assets/images/latest recipes 4.png"
+        class="w-full h-48 object-cover"/>
+
+      <div class="p-4 text-center">
+        <p class="text-gray-700 font-medium">
+          Healthy apple crumble
+        </p>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+<!--hello tiffy-->
+<section class="bg-red-600 py-14">
+  <div class="max-w-6xl mx-auto px-6 border border-white/60 p-10 grid md:grid-cols-2 items-center gap-10">
+
+    <!-- Text -->
+    <div class="text-white text-center md:text-left">
+      <h2 class="text-3xl font-semibold mb-4">
+        Hello there! I am Tiffy.
+      </h2>
+
+      <p class="text-xl mb-6">Start cooking with me</p>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center md:justify-start gap-6 text-xl mb-6">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+
+      <button class="uppercase tracking-wide font-medium hover:underline">
+        View More
+      </button>
+    </div>
+
+    <!-- Image -->
+    <div class="flex justify-center">
+      <img src="./Assets/images/profile.png"
+        class="w-56 h-56 rounded-full object-cover border-4 border-white"/>
+    </div>
+
+  </div>
+</section>
+
+<!--readers fav-->
+<section class="max-w-7xl mx-auto px-4 py-12">
+
+  <!-- Header -->
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-2xl font-semibold">Readers Favourites</h2>
+
+    <a href="./blog.html" class="bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600">
+      View All →
+    </a>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- Card -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <a href="./corousel.html">
+      <img src="./Assets/images/try this 1.png"
+        class="w-full h-48 object-cover"/>
+      <p class="p-4 text-center">Time saving meal prep</p>
+      </a>
+    </div>
+<a href="./readersfav2.html">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="./Assets/images/try this 2.png"
+        class="w-full h-48 object-cover"/>
+      <p class="p-4 text-center">Toddler -friendly foods</p>
+    </div>
+  </a>
+<a href="./latestrecipe3.html">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="./Assets/images/try this 3.png"
+        class="w-full h-48 object-cover"/>
+      <p class="p-4 text-center">10-must try vegan recipes</p>
+    </div>
+    </a>
+<a href="./corousel.html">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="./Assets/images/try this 4.png"
+        class="w-full h-48 object-cover"/>
+      <p class="p-4 text-center">Canning and preserving methods</p>
+    </div>
+    </a>
+
+  </div>
+
+</section>
+
+<!--news letter-->
+<section class="max-w-5xl mx-auto px-4 py-16">
+
+  <div class="border-2 border-red-500 p-10 text-center relative">
+
+    <!-- Background Icons -->
+    <div class="absolute inset-0 opacity-5 
+      bg-[url('https://www.svgrepo.com/download/353829/kitchen.svg')] 
+      bg-center bg-no-repeat">
+    </div>
+
+    <div class="relative">
+      <h2 class="text-red-500 text-2xl font-semibold mb-4">
+        Our Newsletter
+      </h2>
+
+      <p class="text-gray-700 max-w-xl mx-auto mb-6">
+        Subscribe to our newsletter & keep up with our latest recipes
+        and organized workshops.
+      </p>
+
+      <!-- Input -->
+      <div class="flex items-center justify-center border-b border-gray-400 max-w-md mx-auto">
+
+        <input type="email"
+          placeholder="Enter your email address here"
+          class="w-full outline-none py-2 bg-transparent"/>
+
+        <button class="text-gray-700 ml-2">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!--share your meals-->
+<section class="py-16 bg-white text-center">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- Heading -->
+    <h2 class="text-2xl md:text-3xl font-semibold">
+      Share Your Meals On With Instagram With 
+      <span class="text-red-500">#mykitchen</span><br>
+      & We Will Reward The Meal Of The Month!
+    </h2>
+
+    <!-- Images Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-10">
+
+      <img src="./Assets/images/insta 1.png"
+        class="rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+
+      <img src="./Assets/images/insta 2.png"
+        class="rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+
+      <img src="./Assets/images/insta 3.png"
+        class="rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+
+      <img src="./Assets/images/insta 4.png"
+        class="rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+
+      <img src="./Assets/images/insta 5.png"
+        class="rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+
+    </div>
+
+  </div>
+</section>
+
+<!--footer-->
+<footer class="bg-gray-50 py-16 text-center relative overflow-hidden">
+
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10 bg-[url('https://www.svgrepo.com/show/353829/kitchen.svg')] bg-center bg-no-repeat"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4">
+
+    <!-- Logo / Title -->
+    <div class="mb-6">
+      <div class="inline-block border px-6 py-2 rounded-full text-red-500 font-semibold">
+        <img src="./Assets/images/logo.png">
+      </div>
+    </div>
+
+    <!-- Tagline -->
+    <p class="text-lg mb-6">Healthy recipes for busy people</p>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 text-red-500 text-xl mb-6">
+      <i class="fab fa-twitter cursor-pointer"></i>
+      <i class="fab fa-facebook cursor-pointer"></i>
+      <i class="fab fa-instagram cursor-pointer"></i>
+      <i class="fab fa-youtube cursor-pointer"></i>
+      <i class="fab fa-linkedin cursor-pointer"></i>
+    </div>
+
+    <!-- Email Input -->
+    <div class="flex justify-center items-center max-w-md mx-auto border-b border-gray-400">
+      <input type="email"
+        placeholder="Enter your email address here"
+        class="w-full py-2 bg-transparent outline-none">
+
+      <button class="text-black text-lg">➤</button>
+    </div>
+
+    <p class="text-sm mt-2 text-gray-500">
+      *Be informed about the latest recipes and workshops
+    </p>
+
+    <!-- Bottom -->
+    <div class="flex justify-between mt-12 text-sm text-gray-600 px-4">
+      <p class="cursor-pointer">Privacy Policy</p>
+      <p>copyrights 2022 © my kitchen</p>
+    </div>
+
+  </div>
+</footer>
+
+<!--corousel>-->
+<script>
+  const carousel = document.getElementById("carousel");
+  const slides = carousel.children.length;
+
+  let index = 0;
+
+  document.getElementById("next").onclick = () => {
+    index = (index + 1) % slides;
+    updateCarousel();
+  };
+
+  document.getElementById("prev").onclick = () => {
+    index = (index - 1 + slides) % slides;
+    updateCarousel();
+  };
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // Auto slide (optional)
+  setInterval(() => {
+    index = (index + 1) % slides;
+    updateCarousel();
+  }, 4000);
+</script>
+
+  <!-- JS for Mobile Menu -->
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>

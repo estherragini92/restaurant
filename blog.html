@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipes</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Bubblegum+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Sirin+Stencil&display=swap" rel="stylesheet">
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    min-width: 100%;
+    animation: marquee 15s linear infinite;
+  }
+   *{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: 40px;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!--  Top Bar -->
+  <!-- Rolling Top Bar -->
+<div class="bg-gray-200 overflow-hidden whitespace-nowrap">
+  <div class="animate-marquee inline-block py-2 text-gray-700 text-sm">
+    <span class="mx-8">
+      Subscribe to our newsletter - mykitchen@gmail.com
+    </span>
+    <span class="mx-8">
+      Fresh recipes every week 🍲 | Healthy & tasty ideas!
+    </span>
+    <span class="mx-8">
+      Follow us for more delicious updates ❤️
+    </span>
+  </div>
+</div>
+
+  <!--  Header -->
+  <header class="bg-white shadow-sm fade-in">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <div class="text-xl font-semibold border px-4 py-1 rounded-full text-red-500">
+       <img src="./Assets/images/logo.png">
+      </div>
+
+      <!-- Search -->
+      <div class="hidden md:flex items-center w-1/3 relative">
+        <input type="text" placeholder="Search"
+          class="w-full border-b border-gray-400 outline-none px-2 py-1"/>
+        <button class="absolute right-0 bg-red-500 text-white w-9 h-9 rounded-full flex items-center justify-center">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="menu" class="hidden md:flex justify-center space-x-10 py-4 border-t border-b">
+      <a href="index.html" class="hover:text-red-500">HOME</a>
+      <a href="./recipes.html" class="hover:text-red-500">RECIPES</a>
+      <a href="./blog.html" class="hover:text-red-500">BLOG</a>
+      <a href="./aboutme.html" class="hover:text-red-500">ABOUT ME</a>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="hidden flex-col items-center space-y-4 py-4 border-t md:hidden">
+      <a href="./index.html" >HOME</a>
+      <a href="./recipes.html">RECIPES</a>
+      <a href="./blog.html">BLOG</a>
+      <a href="./aboutme.html">ABOUT ME</a>
+    </div>
+  </header>
+
+  <!--blog-->
+  <section class="bg-gray-100 py-10 px-4 md:px-10">
+
+  <!-- Title -->
+  <h2 class="text-3xl font-bold text-center mb-10">Blog</h2>
+
+  <!-- Top Section -->
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- LEFT: Featured Article -->
+    <div class="md:col-span-2 bg-white rounded-xl shadow-md overflow-hidden">
+      
+      <div class="relative">
+       <a href=""><img src="./Assets/images/blog header image.png"
+          class="w-full h-64 object-cover">
+        </a>
+        <!-- Badge -->
+        <span class="absolute top-4 left-4 bg-red-500 text-white text-sm px-4 py-1 rounded-full">
+          FEATURED ARTICLE
+        </span>
+      </div>
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">08/04/2025</p>
+
+        <h3 class="text-xl font-bold mb-2">
+          The Ultimate Guide to Meal Prep
+        </h3>
+
+        <p class="text-gray-600 text-sm">
+          “To meal prep effectively, start by planning your meals for the week,
+          then create a grocery list based on those plans...”
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Quick Prefix -->
+    <div>
+      <h3 class="text-xl font-bold mb-4 border-b pb-2">
+        Quick Prefix in this Article:
+      </h3>
+
+      <ol class="space-y-3 text-gray-700 text-sm">
+        <li>1. What are the foods for breakfast?</li>
+        <li>2. How do you clean vegetables?</li>
+        <li>3. How much ingredients for each recipes?</li>
+        <li>4. What quantities makes a food good?</li>
+        <li>5. Which ingredient is good for every season?</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <!-- Blog Cards Grid -->
+  <div class="grid md:grid-cols-3 gap-8 mt-12">
+
+    <!-- CARD 1-->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="./Assets/images/blog 1.png"
+        class="w-full h-52 object-cover">
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">08/04/2025</p>
+
+        <h3 class="font-semibold text-lg mb-2">
+          Easy and healthy millets recipes
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          “Welcome to my blog, where I share the knowledge acquired...”
+        </p>
+        <a href="./readnow.html">
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Read Now
+        </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 2-->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="./Assets/images/blog 2.png"
+        class="w-full h-52 object-cover">
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">22/03/2025</p>
+
+        <h3 class="font-semibold text-lg mb-2">
+          How to handle lobster
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          “Welcome to my blog, where I share the knowledge acquired...”
+        </p>
+        <a href="./readnow.html">
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Read Now
+        </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 3-->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="./Assets/images/blog 3.png"
+        class="w-full h-52 object-cover">
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">15/03/2025</p>
+
+        <h3 class="font-semibold text-lg mb-2">
+          Platter arrangements
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          “Welcome to my blog, where I share the knowledge acquired...”
+        </p>
+        <a href="./readnow.html">
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Read Now
+        </button>
+        </a>
+      </div>
+    </div>
+
+     <!-- CARD 4-->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="./Assets/images/blog 4.png"
+        class="w-full h-52 object-cover">
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">08/04/2025</p>
+
+        <h3 class="font-semibold text-lg mb-2">
+          Food and Scientific Facts
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          “Welcome to my blog, where I share the knowledge acquired...”
+        </p>
+         <a href="./readnow.html">
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Read Now
+        </button>
+        </a>
+      </div>
+    </div>
+
+     <!-- CARD 5-->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="./Assets/images/blog 5.png"
+        class="w-full h-52 object-cover">
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">22/03/2025</p>
+
+        <h3 class="font-semibold text-lg mb-2">
+          Goodness of Vegetables
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          “Welcome to my blog, where I share the knowledge acquired...”
+        </p>
+         <a href="./readnow.html">
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Read Now
+        </button>
+        </a>
+      </div>
+    </div>
+
+     <!-- CARD 6-->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="./Assets/images/blog 6.png"
+        class="w-full h-52 object-cover">
+
+      <div class="p-5">
+        <p class="text-red-500 text-sm mb-2">15/03/2025</p>
+
+        <h3 class="font-semibold text-lg mb-2">
+         Benefits of Nuts and Dry-Fruits
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          “Welcome to my blog, where I share the knowledge acquired...”
+        </p>
+         <a href="./readnow.html">
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+          Read Now
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  <!--footer-->
+<footer class="bg-gray-50 py-16 text-center relative overflow-hidden">
+
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10 bg-[url('https://www.svgrepo.com/show/353829/kitchen.svg')] bg-center bg-no-repeat"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4">
+
+    <!-- Logo / Title -->
+    <div class="mb-6">
+      <div class="inline-block border px-6 py-2 rounded-full text-red-500 font-semibold">
+        <img src="./Assets/images/logo.png">
+      </div>
+    </div>
+
+    <!-- Tagline -->
+    <p class="text-lg mb-6">Healthy recipes for busy people</p>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 text-red-500 text-xl mb-6">
+      <i class="fab fa-twitter cursor-pointer"></i>
+      <i class="fab fa-facebook cursor-pointer"></i>
+      <i class="fab fa-instagram cursor-pointer"></i>
+      <i class="fab fa-youtube cursor-pointer"></i>
+      <i class="fab fa-linkedin cursor-pointer"></i>
+    </div>
+
+    <!-- Email Input -->
+    <div class="flex justify-center items-center max-w-md mx-auto border-b border-gray-400">
+      <input type="email"
+        placeholder="Enter your email address here"
+        class="w-full py-2 bg-transparent outline-none">
+
+      <button class="text-black text-lg">➤</button>
+    </div>
+
+    <p class="text-sm mt-2 text-gray-500">
+      *Be informed about the latest recipes and workshops
+    </p>
+
+    <!-- Bottom -->
+    <div class="flex justify-between mt-12 text-sm text-gray-600 px-4">
+      <p class="cursor-pointer">Privacy Policy</p>
+      <p>copyrights 2022 © my kitchen</p>
+    </div>
+
+  </div>
+</footer>
+
+   <!-- JS for Mobile Menu -->
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  </body>
+  </html>
